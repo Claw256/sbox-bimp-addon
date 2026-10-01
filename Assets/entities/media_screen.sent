@@ -1,0 +1,10 @@
+{
+  "Prefab": "entities/media_screen.prefab",
+  "Title": "Media Screen",
+  "Description": "A TV screen everyone watches together: YouTube, Twitch, live streams and media links, in sync. Press USE on it to open the remote.",
+  "Category": "Fun",
+  "IncludeCode": true,
+  "Developer": false,
+  "__references": [],
+  "__version": 0
+}

@@ -1,0 +1,3 @@
+[submodule "Libraries/bimp"]
+	path = Libraries/bimp
+	url = https://github.com/Claw256/sbox-bimp.git

@@ -1,0 +1,128 @@
+{
+  "RootObject": {
+    "__guid": "3ccc926e-6af1-58a7-b18f-9c31bb242072",
+    "__version": 2,
+    "Flags": 0,
+    "Name": "media_speaker",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Tags": "",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkFlags": 0,
+    "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
+    "OwnerTransfer": 1,
+    "Components": [
+      {
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "fa4870e1-211a-5a54-81e0-5cf55a4ca765",
+        "__enabled": true,
+        "Flags": 0,
+        "AngularDamping": 0,
+        "EnableImpactDamage": true,
+        "EnhancedCcd": false,
+        "Gravity": true,
+        "GravityScale": 1,
+        "ImpactDamage": 0,
+        "LinearDamping": 0,
+        "Locking": {
+          "X": false,
+          "Y": false,
+          "Z": false,
+          "Pitch": false,
+          "Yaw": false,
+          "Roll": false
+        },
+        "MassCenterOverride": "0,0,0",
+        "MassOverride": 0,
+        "MinImpactDamageSpeed": 500,
+        "MotionEnabled": true,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OverrideMassCenter": false,
+        "RigidbodyFlags": 0,
+        "SleepThreshold": 2,
+        "StartAsleep": false
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "f877da40-54ed-5456-9156-29fa5a5b5373",
+        "__version": 2,
+        "__Prefab": {
+          "Id": "d22813ba-7f8c-4fb6-a277-2eaa05ee0b01",
+          "Path": "prefabs/bimp_speaker.prefab"
+        },
+        "__PrefabInstancePatch": {
+          "AddedObjects": [],
+          "RemovedObjects": [],
+          "PropertyOverrides": [
+            {
+              "Target": {
+                "Type": "Component",
+                "IdValue": "b1e0a002-0000-4000-8000-000000000011"
+              },
+              "Property": "AudioDistance",
+              "Value": 2500
+            },
+            {
+              "Target": {
+                "Type": "Component",
+                "IdValue": "b1e0a002-0000-4000-8000-000000000031"
+              },
+              "Property": "RenderScale",
+              "Value": 0.5
+            }
+          ],
+          "MovedObjects": []
+        },
+        "__PrefabIdToInstanceId": {
+          "b1e0a002-0000-4000-8000-000000000001": "f877da40-54ed-5456-9156-29fa5a5b5373",
+          "b1e0a002-0000-4000-8000-000000000002": "c47be9a7-caa2-5632-b44e-2b79268228b4",
+          "b1e0a002-0000-4000-8000-000000000003": "030d8ff5-9433-5cf3-8ec7-190d93ac0093",
+          "b1e0a002-0000-4000-8000-000000000011": "cad53cfb-ac56-5627-b79a-71db4b3bb57c",
+          "b1e0a002-0000-4000-8000-000000000012": "64d945c3-55a5-5f07-8d2e-1e952c875d5f",
+          "b1e0a002-0000-4000-8000-000000000013": "9bb6ee5a-2eee-582e-895d-711f66777e83",
+          "b1e0a002-0000-4000-8000-000000000021": "d318f957-3fc7-5af3-9be5-7109a9f633ba",
+          "b1e0a002-0000-4000-8000-000000000031": "c8780e7f-5aaf-5d99-b394-f93717b34c61",
+          "b1e0a002-0000-4000-8000-000000000032": "87b824fb-8bc1-57bc-82c8-16021d136055"
+        }
+      }
+    ],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "PhysicsMode": "Physics3D",
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": false,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": "",
+        "DeferGeneration": false,
+        "CustomBounds": false
+      }
+    },
+    "__variables": []
+  },
+  "ResourceVersion": 2,
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "__references": [],
+  "__version": 2
+}

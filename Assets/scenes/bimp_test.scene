@@ -1,0 +1,328 @@
+{
+  "__guid": "8053e422-f0dc-4dd8-9577-45683cb1fe98",
+  "GameObjects": [
+    {
+      "__guid": "d5f3f677-25be-454c-9a26-50880c3cc2cd",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "Sun",
+      "Position": "0,0,0",
+      "Rotation": "-0.0729314983,0.482239604,0.130543306,0.863182724",
+      "Scale": "1,1,1",
+      "Tags": "light_directional,light",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.DirectionalLight",
+          "__guid": "f77ebe4d-83f5-4117-a407-57ebf18f1b08",
+          "__enabled": true,
+          "Flags": 0,
+          "ContactShadows": true,
+          "Contribution": "Diffuse, Specular, Transmissive",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.94419,0.97767,1,1",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "ShadowBias": 0,
+          "ShadowCascadeCount": 4,
+          "ShadowCascadeSplitRatio": 0.91,
+          "ShadowHardness": 0,
+          "Shadows": true,
+          "SkyColor": "0.2532,0.32006,0.35349,1",
+          "Visualizer": {}
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "8a750107-61a7-4112-84d3-8c7559d13b4e",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "2D Skybox",
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "skybox",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkyBox2D",
+          "__guid": "7e1b7af8-3193-4983-8339-36a61d7b1b6c",
+          "__enabled": true,
+          "Flags": 0,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "SkyIndirectLighting": true,
+          "SkyMaterial": "materials/skybox/skybox_day_01.vmat",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.EnvmapProbe",
+          "__guid": "d11c465d-f278-4183-9097-45e382085caa",
+          "__enabled": true,
+          "Flags": 0,
+          "__version": 1,
+          "BakedTexture": null,
+          "Bounds": {
+            "Mins": "-512,-512,-512",
+            "Maxs": "512,512,512"
+          },
+          "DelayBetweenUpdates": 0.1,
+          "Feathering": 0.02,
+          "FrameInterval": 5,
+          "MaxDistance": 512,
+          "Mode": "Baked",
+          "MultiBounce": false,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Priority": 0,
+          "Projection": "Sphere",
+          "RenderExcludeTags": "",
+          "Resolution": "Small",
+          "Texture": "textures/cubemaps/default2.vtex",
+          "TintColor": "1,1,1,1",
+          "UpdateStrategy": "OnEnabled",
+          "ZFar": 4096,
+          "ZNear": 16
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "457613fe-a9ee-44ea-bdcc-d29e498ee2c0",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "Floor",
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "10,10,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "2dc17726-da57-460e-a096-bb2bf6e07f11",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": "materials/default.vmat",
+          "Materials": null,
+          "Model": "models/dev/plane.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "0.39546,0.51163,0.27128,1"
+        },
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "7b35bef3-9af0-4f52-b64c-7cd5bd3c2168",
+          "__enabled": true,
+          "Flags": 0,
+          "Center": "0,0,-5",
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Scale": "100,100,10",
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "96b535f0-5a97-58b2-b500-84e0926c64eb",
+      "__version": 2,
+      "__Prefab": "prefabs/bimp_screen.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "b1e0a001-0000-4000-8000-000000000001"
+            },
+            "Property": "Position",
+            "Value": "320,0,90"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "b1e0a001-0000-4000-8000-000000000001"
+            },
+            "Property": "Rotation",
+            "Value": "0,0,1,0"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "b1e0a001-0000-4000-8000-000000000001": "96b535f0-5a97-58b2-b500-84e0926c64eb",
+        "b1e0a001-0000-4000-8000-000000000011": "fbeebcf9-7410-5b02-b4f9-3d5952fa4569",
+        "b1e0a001-0000-4000-8000-000000000012": "3c8c3b99-98ed-521d-9997-e856c1c970ce",
+        "b1e0a001-0000-4000-8000-000000000013": "29ffb833-174d-511c-b434-612790c395b2",
+        "b1e0a001-0000-4000-8000-000000000014": "dd4bce32-cb2e-5e1d-83ed-ca964ce96163",
+        "b1e0a001-0000-4000-8000-000000000015": "503cd449-abce-56fd-8aec-6a3422033e32",
+        "b1e0a001-0000-4000-8000-000000000002": "3fd36118-cbd7-5932-8778-42fbd55a7ffd",
+        "b1e0a001-0000-4000-8000-000000000021": "6ce8f396-3b71-5aa5-9a49-614873837fbe"
+      }
+    },
+    {
+      "__guid": "c2d55ed8-15e0-513e-b6ca-50d344942f71",
+      "__version": 2,
+      "__Prefab": "prefabs/bimp_speaker.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "b1e0a002-0000-4000-8000-000000000001"
+            },
+            "Property": "Position",
+            "Value": "200,-260,0"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "b1e0a002-0000-4000-8000-000000000001"
+            },
+            "Property": "Rotation",
+            "Value": "0,0,0.923879504,0.382683396"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "b1e0a002-0000-4000-8000-000000000001": "c2d55ed8-15e0-513e-b6ca-50d344942f71",
+        "b1e0a002-0000-4000-8000-000000000011": "2fef2324-b4c0-5d79-97e4-496cbe77222b",
+        "b1e0a002-0000-4000-8000-000000000012": "23589ba6-d841-5ec7-a009-6428876cb3f8",
+        "b1e0a002-0000-4000-8000-000000000013": "9b401186-75fe-561d-979b-44abd18d91ab",
+        "b1e0a002-0000-4000-8000-000000000002": "e7b2cff5-39e4-5396-b246-5ef59a6ac327",
+        "b1e0a002-0000-4000-8000-000000000021": "8b935da7-f090-524d-892d-7db2754585b6",
+        "b1e0a002-0000-4000-8000-000000000003": "6a90d310-512c-5237-b54a-80543bf2c466",
+        "b1e0a002-0000-4000-8000-000000000031": "f1fc26d0-0634-5254-a945-6fdf8fa05299",
+        "b1e0a002-0000-4000-8000-000000000032": "7805b58e-803a-5c47-bc0c-56818209fd5d"
+      }
+    },
+    {
+      "__guid": "5f4eb87d-5d54-49ff-9b7c-30c1cd6cff8a",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "Spawn Point",
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "7b3762dd-2826-4015-8d5d-4b1ec69e2916",
+          "__enabled": true,
+          "Flags": 0
+        }
+      ],
+      "Children": []
+    }
+  ],
+  "SceneProperties": {
+    "NetworkInterpolation": true,
+    "PhysicsMode": "Physics3D",
+    "TimeScale": 1,
+    "WantsSystemScene": true,
+    "Metadata": {},
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": "",
+      "DeferGeneration": false,
+      "CustomBounds": false
+    },
+    "GameObjectSystems": {
+      "Sandbox.Clutter.ClutterGridSystem": {
+        "Storage": {
+          "$blob": "e1cbbf21-dd08-4d35-9ffc-0c42c60325e9",
+          "$refs": []
+        }
+      },
+      "Sandbox.SelectionSetsSystem": {
+        "Data": {
+          "SelectionSets": []
+        }
+      }
+    }
+  },
+  "ResourceVersion": 3,
+  "Title": "BIMP test",
+  "Description": "A Media Screen and a Media Speaker to test BIMP in Sandbox. Spawn more from Q, Entities, Fun.",
+  "__references": [],
+  "__version": 3
+}

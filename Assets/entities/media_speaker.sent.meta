@@ -1,0 +1,26 @@
+{
+  "guid": "091d5a15-91fb-4858-8b3f-5b55d14d965a",
+  "publish": {
+    "Enabled": true,
+    "ProjectConfig": {
+      "Title": "Media Speaker",
+      "Type": "sent",
+      "Org": "rexi",
+      "Ident": "bimp_speaker",
+      "Schema": 0,
+      "IncludeSourceFiles": false,
+      "Resources": null,
+      "PackageReferences": [
+        "rexi.bimp_sandbox"
+      ],
+      "EditorReferences": null,
+      "Mounts": null,
+      "IsStandaloneOnly": false,
+      "Metadata": {
+        "SingleAssetSource": "entities/media_speaker.sent",
+        "ParentPackage": "facepunch.sandbox",
+        "Summary": "A speaker everyone listens to together."
+      }
+    }
+  }
+}

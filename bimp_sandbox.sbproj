@@ -1,0 +1,18 @@
+{
+  "Title": "BIMP for Sandbox",
+  "Type": "addon",
+  "Org": "rexi",
+  "Ident": "bimp_sandbox",
+  "Schema": 1,
+  "IncludeSourceFiles": false,
+  "Resources": null,
+  "PackageReferences": [],
+  "EditorReferences": null,
+  "Mounts": null,
+  "IsStandaloneOnly": false,
+  "Metadata": {
+    "Summary": "Media Screen and Media Speaker entities for Sandbox, powered by the BIMP media player library.",
+    "StartupScene": "scenes/bimp_test.scene",
+    "ParentPackage": "facepunch.sandbox"
+  }
+}

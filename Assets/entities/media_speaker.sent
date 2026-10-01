@@ -1,0 +1,10 @@
+{
+  "Prefab": "entities/media_speaker.prefab",
+  "Title": "Media Speaker",
+  "Description": "A speaker everyone listens to together: YouTube, SoundCloud, radio and audio links, in sync, with a spectrum display. Press USE on it to open the remote.",
+  "Category": "Fun",
+  "IncludeCode": false,
+  "Developer": false,
+  "__references": [],
+  "__version": 0
+}

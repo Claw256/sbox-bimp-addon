@@ -1,0 +1,140 @@
+{
+  "RootObject": {
+    "__guid": "e822b4db-1969-5a42-85f7-e5a8681c1ad4",
+    "__version": 2,
+    "Flags": 0,
+    "Name": "media_screen",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Tags": "",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkFlags": 0,
+    "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
+    "OwnerTransfer": 1,
+    "Components": [
+      {
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "9b10609c-52ae-58c0-b3df-4481e15d0e29",
+        "__enabled": true,
+        "Flags": 0,
+        "AngularDamping": 0,
+        "EnableImpactDamage": true,
+        "EnhancedCcd": false,
+        "Gravity": true,
+        "GravityScale": 1,
+        "ImpactDamage": 0,
+        "LinearDamping": 0,
+        "Locking": {
+          "X": false,
+          "Y": false,
+          "Z": false,
+          "Pitch": false,
+          "Yaw": false,
+          "Roll": false
+        },
+        "MassCenterOverride": "0,0,0",
+        "MassOverride": 0,
+        "MinImpactDamageSpeed": 500,
+        "MotionEnabled": true,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OverrideMassCenter": false,
+        "RigidbodyFlags": 0,
+        "SleepThreshold": 2,
+        "StartAsleep": false
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "edca18c5-53cd-5476-8b3a-a082c36449bf",
+        "__version": 2,
+        "__Prefab": {
+          "Id": "f2f8975a-4dba-48a4-9fb7-bd8e297276e2",
+          "Path": "prefabs/bimp_screen.prefab"
+        },
+        "__PrefabInstancePatch": {
+          "AddedObjects": [],
+          "RemovedObjects": [],
+          "PropertyOverrides": [
+            {
+              "Target": {
+                "Type": "Component",
+                "IdValue": "b1e0a001-0000-4000-8000-000000000011"
+              },
+              "Property": "AudioDistance",
+              "Value": 2500
+            },
+            {
+              "Target": {
+                "Type": "Component",
+                "IdValue": "b1e0a001-0000-4000-8000-000000000014"
+              },
+              "Property": "RenderScale",
+              "Value": 0.5
+            },
+            {
+              "Target": {
+                "Type": "Component",
+                "IdValue": "b1e0a001-0000-4000-8000-000000000015"
+              },
+              "Property": "Player",
+              "Value": {
+                "_type": "component",
+                "component_id": "b1e0a001-0000-4000-8000-000000000011",
+                "go": "b1e0a001-0000-4000-8000-000000000001",
+                "component_type": "MediaPlayer"
+              }
+            }
+          ],
+          "MovedObjects": []
+        },
+        "__PrefabIdToInstanceId": {
+          "b1e0a001-0000-4000-8000-000000000001": "edca18c5-53cd-5476-8b3a-a082c36449bf",
+          "b1e0a001-0000-4000-8000-000000000002": "d0331ca0-7a33-587b-9ce2-78fc0f77e50b",
+          "b1e0a001-0000-4000-8000-000000000011": "e7abfb1f-1109-5d95-9885-eb343ba8e5a2",
+          "b1e0a001-0000-4000-8000-000000000012": "adc08b15-654e-538a-afd2-a7908bbe1e32",
+          "b1e0a001-0000-4000-8000-000000000013": "fa38ad9d-9278-59be-8c86-eda687745b99",
+          "b1e0a001-0000-4000-8000-000000000014": "48d51cbf-5756-500a-bf4f-a240dbc4422b",
+          "b1e0a001-0000-4000-8000-000000000015": "1bfe50e6-8528-5764-8228-e3859034039c",
+          "b1e0a001-0000-4000-8000-000000000021": "2948d623-e19e-57b2-94ba-97656e56e710"
+        }
+      }
+    ],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "PhysicsMode": "Physics3D",
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": false,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": "",
+        "DeferGeneration": false,
+        "CustomBounds": false
+      }
+    },
+    "__variables": []
+  },
+  "ResourceVersion": 2,
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "__references": [],
+  "__version": 2
+}
