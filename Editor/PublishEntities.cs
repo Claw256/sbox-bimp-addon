@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -108,6 +111,28 @@ public static class PublishEntities
 					await upload.AddFile( assembly.XmlDocumentation ?? "", $".bin/{assembly.Compiler.AssemblyName}.xml" );
 					await upload.AddFile( assembly.Archive.Serialize(), $".bin/{assembly.Compiler.AssemblyName}.cll" );
 				}
+
+				// Razor components load their .razor.scss/.css stylesheets at runtime from the package filesystem,
+				// so bundle stylesheets from this project and all referenced libraries alongside the compiled code.
+				var codeRoots = new List<string>();
+				if ( Project.Current?.GetCodePath() is string currentCodePath && !string.IsNullOrEmpty( currentCodePath ) )
+					codeRoots.Add( currentCodePath );
+				foreach ( var library in LibrarySystem.All )
+				{
+					if ( library?.Project?.GetCodePath() is string libCodePath && !string.IsNullOrEmpty( libCodePath ) )
+						codeRoots.Add( libCodePath );
+				}
+
+				var addedStyles = new HashSet<string>( StringComparer.OrdinalIgnoreCase );
+				foreach ( var codeRoot in codeRoots )
+				{
+					foreach ( var file in EnumerateStylesheets( codeRoot ) )
+					{
+						var relativePath = Path.GetRelativePath( codeRoot, file ).Replace( '\\', '/' ).ToLowerInvariant();
+						if ( !addedStyles.Add( relativePath ) ) continue;
+						await upload.AddFile( await System.IO.File.ReadAllBytesAsync( file ), relativePath );
+					}
+				}
 				report.AppendLine( $"{path}: code {string.Join( ", ", compiled.Select( x => x.Compiler.AssemblyName ) )}" );
 
 				await upload.PrePublish();
@@ -138,5 +163,31 @@ public static class PublishEntities
 
 		if ( publish ) EditorUtility.ClearPackageCache();
 		return report.ToString();
+	}
+
+	static IEnumerable<string> EnumerateStylesheets( string root )
+	{
+		if ( string.IsNullOrEmpty( root ) || !Directory.Exists( root ) )
+			yield break;
+
+		var dirs = new Stack<string>();
+		dirs.Push( root );
+		while ( dirs.Count > 0 )
+		{
+			var dir = dirs.Pop();
+			foreach ( var file in Directory.EnumerateFiles( dir ) )
+			{
+				var ext = Path.GetExtension( file );
+				if ( ext.Equals( ".scss", StringComparison.OrdinalIgnoreCase ) || ext.Equals( ".css", StringComparison.OrdinalIgnoreCase ) )
+					yield return file;
+			}
+			foreach ( var subDir in Directory.EnumerateDirectories( dir ) )
+			{
+				var name = Path.GetFileName( subDir );
+				if ( string.IsNullOrEmpty( name ) || name.StartsWith( '.' ) || name.Equals( "obj", StringComparison.OrdinalIgnoreCase ) || name.Equals( "bin", StringComparison.OrdinalIgnoreCase ) )
+					continue;
+				dirs.Push( subDir );
+			}
+		}
 	}
 }
