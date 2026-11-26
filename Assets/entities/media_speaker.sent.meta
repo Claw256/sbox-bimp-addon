@@ -13,7 +13,7 @@
       "Resources": null,
       "PublishUsedAssetsOnly": false,
       "PackageReferences": [
-        "rexi.bimp_sandbox"
+        "rexi.bimp_screen"
       ],
       "EditorReferences": null,
       "Mounts": null,

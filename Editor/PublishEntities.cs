@@ -50,8 +50,9 @@ public static class PublishEntities
 					continue;
 				}
 
-				// The entities carry no code: they reference the addon package (rexi.bimp_sandbox), which has BIMP's
-				// compiled code once - bundled into each entity, loading both loaded BIMP twice.
+				// media_screen.sent carries the compiled code (IncludeCode: true) and media_speaker.sent
+				// (IncludeCode: false) references rexi.bimp_screen so BIMP is loaded once and always ships
+				// the latest code on sbox.game ("Type": "addon" projects publish only to Steam Workshop).
 				var references = settings.ProjectConfig.PackageReferences ?? new System.Collections.Generic.List<string>();
 				report.AppendLine( $"{path}: references {(references.Count > 0 ? string.Join( ", ", references ) : "nothing")}" );
 				if ( !asset.Publishing.BuildPublishContext().IncludeCode )

@@ -12,9 +12,7 @@
       "IncludeSourceFiles": false,
       "Resources": null,
       "PublishUsedAssetsOnly": false,
-      "PackageReferences": [
-        "rexi.bimp_sandbox"
-      ],
+      "PackageReferences": [],
       "EditorReferences": null,
       "Mounts": null,
       "IsStandaloneOnly": false,

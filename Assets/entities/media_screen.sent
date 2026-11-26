@@ -5,7 +5,7 @@
   "Category": "Fun",
   "PreviewIcon": "entities/media_screen_icon.png",
   "PreviewModel": "models/dev/box.vmdl",
-  "IncludeCode": false,
+  "IncludeCode": true,
   "Developer": false,
   "__references": [],
   "__version": 0
