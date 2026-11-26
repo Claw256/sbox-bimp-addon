@@ -14,7 +14,11 @@ namespace Editor;
 [McpToolset( "bimp_sandbox", "Publishing the BIMP for Sandbox entities (Media Screen, Media Speaker)" )]
 public static class PublishEntities
 {
-	static readonly string[] Entities = { "entities/media_screen.sent", "entities/media_speaker.sent" };
+	static readonly (string Path, bool BundleCode)[] Entities =
+	{
+		("entities/media_screen.sent", true),
+		("entities/media_speaker.sent", false),
+	};
 
 	/// <summary>
 	/// List what each BIMP entity (Media Screen, Media Speaker) would upload to sbox.game, and with publish = true,
@@ -25,7 +29,7 @@ public static class PublishEntities
 	{
 		var report = new StringBuilder();
 
-		foreach ( var path in Entities )
+		foreach ( var (path, bundleCode) in Entities )
 		{
 			var asset = AssetSystem.FindByPath( path );
 			if ( asset is null )
@@ -50,12 +54,14 @@ public static class PublishEntities
 					continue;
 				}
 
-				// media_screen.sent carries the compiled code (IncludeCode: true) and media_speaker.sent
-				// (IncludeCode: false) references rexi.bimp_screen so BIMP is loaded once and always ships
-				// the latest code on sbox.game ("Type": "addon" projects publish only to Steam Workshop).
+				// media_screen.sent carries the compiled code and media_speaker.sent references rexi.bimp_screen
+				// so BIMP is loaded once and always ships the latest code on sbox.game ("Type": "addon" projects
+				// publish only to Steam Workshop). Note: ResourcePublishContext.IncludeCode was obsoleted to
+				// always return false, and Project.CanPublishCode() only allows "game"/"library", so we pass a
+				// temporary "game" type to EditorUtility.Projects.Compile while keeping the published package "sent".
 				var references = settings.ProjectConfig.PackageReferences ?? new System.Collections.Generic.List<string>();
 				report.AppendLine( $"{path}: references {(references.Count > 0 ? string.Join( ", ", references ) : "nothing")}" );
-				if ( !asset.Publishing.BuildPublishContext().IncludeCode )
+				if ( !bundleCode )
 				{
 					await upload.PrePublish();
 					var errs = upload.Manifest.Errors;
@@ -78,8 +84,19 @@ public static class PublishEntities
 				// project and every library compiled for release, each as .bin/<assembly>.cll, plus the load order.
 				// Single-asset publishing never includes source files.
 				var codeProject = asset.Publishing.CreateTemporaryProject( Project.Current.RootDirectory );
-				var compiled = await EditorUtility.Projects.Compile( codeProject, null );
-				if ( compiled is null || compiled.Any( x => !x.Successful ) )
+				var originalType = codeProject.Config.Type;
+				CompilerOutput[] compiled;
+				try
+				{
+					codeProject.Config.Type = "game";
+					compiled = await EditorUtility.Projects.Compile( codeProject, null );
+				}
+				finally
+				{
+					codeProject.Config.Type = originalType;
+				}
+
+				if ( compiled is null || compiled.Length == 0 || compiled.Any( x => !x.Successful ) )
 				{
 					report.AppendLine( $"{path}: compile failed ({string.Join( ", ", compiled?.Where( x => !x.Successful ).Select( x => x.Compiler.AssemblyName ) ?? new[] { "no code" } )})" );
 					continue;
