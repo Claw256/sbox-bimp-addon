@@ -33,3 +33,6 @@ Exports/
 __pycache__/
 *.pyc
 NUL
+
+# Generated store thumbnails (rebuild via tools/store-assets/run.ps1)
+store/

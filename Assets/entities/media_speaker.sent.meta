@@ -6,21 +6,27 @@
       "Title": "Media Speaker",
       "Type": "sent",
       "Org": "rexi",
+      "OrgTitle": null,
       "Ident": "bimp_speaker",
       "Schema": 0,
       "IncludeSourceFiles": false,
       "Resources": null,
+      "PublishUsedAssetsOnly": false,
       "PackageReferences": [
         "rexi.bimp_sandbox"
       ],
       "EditorReferences": null,
       "Mounts": null,
       "IsStandaloneOnly": false,
+      "AI": {
+        "EnableMcpCommunication": true
+      },
       "Metadata": {
         "SingleAssetSource": "entities/media_speaker.sent",
         "ParentPackage": "facepunch.sandbox",
         "Summary": "A speaker everyone listens to together."
       }
-    }
+    },
+    "HammerAutoPackageReferences": null
   }
 }

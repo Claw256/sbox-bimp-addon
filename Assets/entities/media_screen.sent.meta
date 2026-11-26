@@ -6,21 +6,27 @@
       "Title": "Media Screen",
       "Type": "sent",
       "Org": "rexi",
+      "OrgTitle": null,
       "Ident": "bimp_screen",
       "Schema": 0,
       "IncludeSourceFiles": false,
       "Resources": null,
+      "PublishUsedAssetsOnly": false,
       "PackageReferences": [
         "rexi.bimp_sandbox"
       ],
       "EditorReferences": null,
       "Mounts": null,
       "IsStandaloneOnly": false,
+      "AI": {
+        "EnableMcpCommunication": true
+      },
       "Metadata": {
         "SingleAssetSource": "entities/media_screen.sent",
         "ParentPackage": "facepunch.sandbox",
         "Summary": "A TV screen everyone watches together."
       }
-    }
+    },
+    "HammerAutoPackageReferences": null
   }
 }

@@ -3,7 +3,9 @@
   "Title": "Media Screen",
   "Description": "A TV screen everyone watches together: YouTube, Twitch, live streams and media links, in sync. Press USE on it to open the remote.",
   "Category": "Fun",
-  "IncludeCode": true,
+  "PreviewIcon": "entities/media_screen_icon.png",
+  "PreviewModel": "models/dev/box.vmdl",
+  "IncludeCode": false,
   "Developer": false,
   "__references": [],
   "__version": 0

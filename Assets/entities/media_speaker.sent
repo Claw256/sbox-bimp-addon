@@ -3,6 +3,8 @@
   "Title": "Media Speaker",
   "Description": "A speaker everyone listens to together: YouTube, SoundCloud, radio and audio links, in sync, with a spectrum display. Press USE on it to open the remote.",
   "Category": "Fun",
+  "PreviewIcon": "entities/media_speaker_icon.png",
+  "PreviewModel": "models/dev/box.vmdl",
   "IncludeCode": false,
   "Developer": false,
   "__references": [],

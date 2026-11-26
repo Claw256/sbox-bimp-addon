@@ -35,8 +35,8 @@
           "Yaw": false,
           "Roll": false
         },
-        "MassCenterOverride": "0,0,0",
-        "MassOverride": 0,
+        "MassCenterOverride": "0,0,8",
+        "MassOverride": 14,
         "MinImpactDamageSpeed": 500,
         "MotionEnabled": true,
         "OnComponentDestroy": null,
@@ -45,7 +45,7 @@
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
         "OnComponentUpdate": null,
-        "OverrideMassCenter": false,
+        "OverrideMassCenter": true,
         "RigidbodyFlags": 0,
         "SleepThreshold": 2,
         "StartAsleep": false
@@ -78,6 +78,14 @@
               },
               "Property": "RenderScale",
               "Value": 0.5
+            },
+            {
+              "Target": {
+                "Type": "Component",
+                "IdValue": "b1e0a002-0000-4000-8000-000000000013"
+              },
+              "Property": "Static",
+              "Value": false
             }
           ],
           "MovedObjects": []
